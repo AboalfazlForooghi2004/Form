@@ -1,0 +1,185 @@
+<!doctype html>
+
+<html dir="rtl">
+
+<head>
+
+<meta charset="utf-8">
+
+<title>Untitled Document</title>
+
+<style>
+
+*{
+
+	border:inherit;color:#FFFFFF;border-color:#000000}.mouse-cursor-gradient-tracking {
+
+  position: relative;
+
+  background: #7983ff;
+
+  padding: 0.5rem 1rem;
+
+  font-size: 1.2rem;
+
+  border: none;
+
+  color: white;
+
+  cursor: pointer;
+
+  outline: none;
+
+  overflow: hidden;
+
+}
+
+.mouse-cursor-gradient-tracking span {
+
+  position: relative;
+
+}
+
+.mouse-cursor-gradient-tracking:before {
+
+  --size: 0;
+
+  content: '';
+
+  position: absolute;
+
+  left: var(--x);
+
+  top: var(--y);
+
+  width: var(--size);
+
+  height: var(--size);
+
+  background: radial-gradient(circle closest-side, pink, transparent);
+
+  transform: translate(-50%, -50%);
+
+  transition: width 0.2s ease, height 0.2s ease;
+
+}
+
+.mouse-cursor-gradient-tracking:hover:before {
+
+  --size: 200px;
+
+}
+
+</style>
+
+<script>
+
+let btn = document.querySelector('.mouse-cursor-gradient-tracking');
+
+btn.addEventListener('mousemove', e => {
+
+  let rect = e.target.getBoundingClientRect();
+
+  let x = e.clientX - rect.left;
+
+  let y = e.clientY - rect.top;
+
+  btn.style.setProperty('--x', x + 'px');
+
+  btn.style.setProperty('--y', y + 'px');
+
+});
+
+</script>
+
+</head>
+
+<body bgcolor="#9DB3F9">
+
+<center><table width="362" height="395" border="1" cellpadding="0" cellspacing="0">
+
+ <tbody>
+
+    <tr>
+
+      <td bgcolor="#01194B">
+
+      <form  id="form1" name="form1" action="aa.php" method="post">
+
+        <h6>
+
+          <label for="textfield">نام</label>
+
+          <input type="text" name="name" id="textfield">
+
+        </h6>
+
+        <h5>
+
+          <label for="textfield2">نام خانوادگی:</label>
+
+          <input type="text" name="textfield2" id="textfield2">
+
+        </h5>
+
+        <h5>
+
+          <label for="email">ایمیل:</label>
+
+          <input type="email" name="email" id="email">
+
+        </h5>
+
+        
+
+        <h5>
+
+          <label for="tel">تلفن همراه:</label>
+
+          <input name="tel" type="tel" id="tel" value="+98">
+
+        </h5>
+
+       
+
+        <p>&nbsp; </p>
+
+        <p>&nbsp;</p>
+
+        <p>&nbsp;</p>
+
+        <p>&nbsp;</p>
+
+        <p>&nbsp;</p>
+
+        <p>&nbsp;</p>
+
+        <p>&nbsp;</p>
+
+        <p>&nbsp;</p>
+
+        <p>&nbsp;</p>
+
+        <h1>
+
+ <button class="mouse-cursor-gradient-tracking" dir="ltr">
+
+  <span>submit</span>
+
+</button>
+
+        </h1>
+
+      </form></td>
+
+    </tr>
+
+  </tbody>
+
+</table>
+
+</center>
+
+</body>
+
+</html>
